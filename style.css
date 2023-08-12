@@ -1,0 +1,366 @@
+*{
+    text-decoration: none;
+}
+
+html{
+    font-family: 'poppins', sans-serif;
+    width: 100vw;
+}
+.container{
+    width: 100%;
+}
+
+/*======================= styling the home page ============================================ */
+.head-stuffs{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 70px 0px 70px;
+    background-color: rgba(255, 228, 196, 0.7);
+}
+
+.logo-img {
+    width: 300px;
+    height: auto;
+}
+
+
+/*===================== This styling is made to style the header section =====================  */
+ul.common-styling{
+    display: inline-flex;
+    list-style-type: none;
+    background-color: transparent;
+    gap: 2em;
+}
+
+.nav-items{
+    padding: 30px;
+}
+
+ ul.common-styling li a{
+    text-decoration: none;
+    color: #03016c;
+    word-spacing: 2em;
+}
+
+ul.common-styling li a:hover{
+    border-bottom: 2px solid #e21012; 
+}
+
+.left-items{
+    text-align: center;
+    align-items: center;
+}
+
+
+
+/*========================== working on styling the Banner =========================== */
+.banner-img{
+    background-image: url('images/head_banner1.jpg');
+    background-size: cover;
+    height: 600px;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.banner-header{
+    text-align: center;
+    padding: 70px;
+}
+
+.banner-header span{
+    color: orange;
+}
+
+.banner-header p{
+    color: white;
+    font-size: 1.5rem;
+    margin-top: -40px;
+}
+
+
+.banner-h2{
+    color: white;
+    font-size: 7rem;
+    text-transform: uppercase;
+    margin: 0px;
+}
+
+/* ====================== SEARCH BAR ========================== */
+.search-input{
+    width: 40%;
+    border: 2px solid #03016c;
+    border-radius: 10px;
+    background-color: white ;
+    padding: 10px;
+    margin: 0px;
+}
+
+.search-btn, .footer-btn{
+    background-color: red;
+    font-family: 'poppins';
+    font-size: 15px;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    border: none;
+    width: 130px;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.search-btn:hover, .footer-btn:hover{
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    font-family: 'poppins';
+    margin-left: 2rem;
+}
+
+
+
+/* ======================== Styling the Hero section of theh website ============================== */
+
+.main-hero{
+    max-width: 85%;
+    margin: 5%;
+    height: 600px;
+    text-align: center;
+    padding: 0px 60px 0px 60px;
+}
+
+.main-hero>h2{
+    color: red;
+    margin: none;
+    padding: 0px;
+}
+
+.main-hero>p{
+    color: #03016c;
+    margin-bottom: 30px;
+}
+
+
+
+.steps{
+    display: inline-flex;
+    gap: 2em;
+    padding: 0px;
+    height: auto;
+}
+
+.step1, .step2, .step3{
+    background-color:#03016c;
+    padding: 15px;
+    border-radius: 20px;
+    height: auto;
+    width: 70%;
+
+}
+
+.steps p{
+    color: white;
+}
+
+.steps h3{
+    color: white;
+    font-size: 1.5rem;
+}
+
+.ready{
+    color: #03016c;
+    align-items: center;
+    margin: 70px 0px 40px 0px;
+    font-size: 1em;
+}
+.ready h3{
+    font-size: 2em;
+}
+
+.ready a{
+    margin-left: 20px;
+    background-color: red;
+    color: white;
+    padding: 7px 15px;
+    text-decoration: none;
+    border-radius: 10px;
+    width: 130px;
+    transition: all 300ms ease;
+}
+
+.ready a:hover{
+    color: red;
+    border: 2px solid red;
+    background-color: transparent;
+    margin-left: 2rem;
+}
+
+
+.contact-details{
+    width: 100%;
+}  
+
+.contact-details > h2{
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.contact-input, .login-input{
+    margin-top: 40% 0% 40% 0%;
+    padding: 0% 20% 0% 20%;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* The Login Page styling */
+
+.heading1{
+    text-align: center; 
+    /* border-bottom: 2px solid #e21012; */
+    padding-bottom: 20px;
+}
+
+h2{
+    margin:0px;
+    padding-top: 50px;
+    font-size: 3rem;
+    color: #03016c;
+}
+
+.para{
+    color: #e21012;
+    margin: 0% 0% 5% 0%;
+    border-width:medium;
+    font-size: 1.2em;
+}
+
+.form-wrapper{
+    margin-top: 70px;
+    margin-bottom: 100px;
+    display: flex;
+    border-radius: 20px;
+    /* gap: 1.5em; */
+    align-items: center;
+}
+
+
+.main-img{
+    width: 50%;
+    height: auto;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.right-form{
+    width: 70%;
+    padding: 50px;
+
+}
+
+input, select{
+    font-family: 'poppins';
+    font-size: 15px;
+    border:hidden;
+    background-color: none;
+    border-bottom: 2px solid grey;
+    width: 100%;
+    padding-top:10px;
+    margin-bottom: 10px;
+    outline-style: none;
+}
+
+label{
+    color: #03016c;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.reg-btn a{
+    text-decoration: none;
+    color: white;
+    transition: all 300ms ease;
+}
+
+
+.reg-btn{
+    background-color: red;
+    font-family: 'poppins';
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    border: none;
+    width: 130px;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.reg-btn:hover{
+    border: 2px solid #03016c;
+    color: #03016c;
+    background-color: transparent;
+    margin-left: 2rem;
+}
+
+.reg-btn a:hover{
+    color: #03016c;
+    margin-left: 2rem;
+}
+
+
+/*================================ styling the footer element ======================== */
+
+footer{
+   max-width: 120%;
+   margin: 5% 0% 0% 0%;
+   background-color:rgba(255, 228, 196, 0.7);
+   padding: 40px 0px 20px 0px;
+}
+
+.first-footer, .question-search{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.copy-footer{
+    color: grey;
+    font-size: 12px;
+    text-align: center;
+}
+
+.sub-input{
+    width: 40%;
+    border: 2px solid #03016c;
+    border-radius: 5px;
+    background-color: transparent ;
+    padding: 10px;
+    margin: 0px;
+}
+
+
+.second-footer{
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    background-color: #d9d9df;
+    margin-top: 10px;
+    
+    
+}
+
+
+
+
+
+
+
