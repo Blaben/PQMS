@@ -18,6 +18,7 @@ html{
     justify-content: space-between;
     padding: 0px 70px 0px 70px;
     background-color: rgba(255, 228, 196, 0.7);
+    position: relat;
 }
 
 .logo-img {
@@ -326,6 +327,7 @@ footer{
    margin: 5% 0% 0% 0%;
    background-color:rgba(255, 228, 196, 0.7);
    padding: 40px 0px 20px 0px;
+   position: static;
 }
 
 .first-footer, .question-search{
@@ -360,6 +362,107 @@ footer{
     
 }
 
+/* =================== DASHBOARD STYLING ====================== */
+
+.dash-container{
+    display: flex;
+    width: 96%;
+    margin: 0px auto;
+    gap: 1.8rem;
+    /* grid-template-columns: 18rem auto; */
+    background-color: #f5efef;
+}
+
+aside{
+    background-color: white;
+    height: auto;
+    width: 18rem;
+}
+
+.dash-top{
+    display: flex;
+    align-items: center;
+    margin: 0px 0px 40px;
+    justify-content: space-between;
+}
+
+.dash-logo{
+    display: flex;
+    margin : 18px 0px 0px 10px;
+    align-items: center;
+    gap: 0.5rem;
+    padding-top: 20px;
+}
+
+.dash-logo-img{
+    width: 50px;
+    height: 50px;
+}
+
+aside .dash-logo h2{
+    font-size: 20px;
+    margin: 0px;
+    padding: 0px;
+    line-height: 20px;
+}
+
+.dash-img{
+    width: 25px;
+    height: 25px;
+}
+
+.dash-close{
+    display: none;
+}
+
+
+.dash-sidebar {
+    margin-left: 2rem;
+}
+
+.dash-sidebar a{
+    display: flex;
+    gap: 0.8rem;
+    color: #363636;
+    align-items: center;
+    position: relative;
+    height: 3.8rem;
+    transition: all 300ms ease;
+
+}
+
+.dash-sidebar a:hover{
+    margin-left: 8px;
+    color: red;
+}
+
+.dash-sidebar a:nth-child(){
+    position: relative;
+    bottom: 2rem;
+}
+
+.dash-submenu{
+    position: absolute;
+    right: calc(100px + 694px);
+    top: calc(100px + 35px);
+    height: auto;
+    width: 13%;
+    background-color: rgb(255, 255, 255);
+
+}
+
+
+/* ======================= End of Aside styling ======================== */
+
+
+
+/* ====================== MAIN DASHBOARD STYLING =========================== */
+
+.dash-main{
+    background-color: white;
+    width: 62rem;
+    height: auto;
+}
 
 
 
