@@ -12,7 +12,7 @@
 <body>
 
     <div class="dash-container">
-        <aside>
+        <aside class="dash-content">
             <div class="dash-top">
                 <div class="dash-logo">
                     <img class="dash-logo-img" src="images/uew-logo.png" alt="">
@@ -24,27 +24,28 @@
             </div>
 
             <div class="dash-sidebar">
-                <a href="#">
+                
+                <a href="#" class="dash-submenu">
                     <img class="dash-img" src="images/icons/house_FILL0_wght400_GRAD0_opsz48.svg" alt="">
                     <h3>Department</h3>
                     <img class="dash-img" class="dash-arrow" src="images/icons/navigate_next_FILL0_wght400_GRAD0_opsz48.svg" alt="">
                 </a>
-                <ul class="dash-submenu">
-                    <a href="#">
+                <div class="dash-submenu-items">
+                    <a href="#" class="dash-submenu-title">
                         <img class="dash-img" class="dash-arrow" src="images/icons/expand_more_FILL0_wght400_GRAD0_opsz48.svg" alt="">
                         <h3> Department</h3>
                     </a>
-                    <li><a href="#"><h4>ICT</h4></a></li> 
-                    <li><a href="#"><h4>French</h4></a></li> 
-                    <li><a href="#"><h4>Mathematics</h4></a></li> 
-                    <li><a href="#"><h4>Business Administration</h4></a></li> 
-                    <li><a href="#"><h4>Science</h4></a></li> 
-                    <li><a href="#"><h4>Political Science</h4></a></li> 
-                    <li><a href="#"><h4>Social Studies</h4></a></li> 
-                    <li><a href="#"><h4>HESA</h4></a></li> 
-                    <li><a href="#"><h4>Special Education</h4></a></li> 
-                    <li><a href="#"><h4>Liberal Courses</h4></a></li> 
-                </ul>
+                    <a href="#"><h4>ICT</h4></a> 
+                    <a href="#"><h4>French</h4></a> 
+                    <a href="#"><h4>Mathematics</h4></a> 
+                    <a href="#"><h4>Business Administration</h4></a>
+                    <a href="#"><h4>Science</h4></a></li> 
+                    <a href="#"><h4>Political Science</h4></a> 
+                    <a href="#"><h4>Social Studies</h4></a> 
+                    <a href="#"><h4>HESA</h4></a></li> 
+                    <a href="#"><h4>Special Education</h4></a> 
+                    <a href="#"><h4>Liberal Courses</h4></a>
+                </div>
                 
                 <a href="#">
                     <img src="images/icons/monitoring_FILL0_wght400_GRAD0_opsz48.svg" alt="" class="dash-img">
@@ -63,22 +64,21 @@
                     <h3>Add Records</h3>
                 </a>
                 
-                <a href="#">
-                    <img src="images/icons/delete_FILL0_wght400_GRAD0_opsz48.svg" alt="" class="dash-img">
-                    <h3>Delete Records</h3>
-                    <img class="dash-img" src="images/icons/navigate_next_FILL0_wght400_GRAD0_opsz48.svg" alt="">
-                </a>
-
-                <ul>
-                    <a href="#"><h4>Delete User</h4></a> 
+                <div >
+                    <a href="#">
+                        <img class="dash-img" class="dash-arrow" src="images/icons/delete_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+                        <h3> Delete Record</h3>
+                    </a>
+                    <a href="#"><h4>Delet User</h4></a> 
                     <a href="#"><h4>Delete Question</h4></a> 
-                </ul>
+                </div>
                 
                 <a href="#">
                     <img src="images/icons/logout_FILL0_wght400_GRAD0_opsz48.svg" alt="" class="dash-img">
                     <h3>Logout</h3>
 
                 </a>
+               
             </div>
         </aside>
 
@@ -88,11 +88,14 @@
 
     </div>
     
+    <script src="script.js"></script>
 </body>
 
-<footer class="reg-footer">
+<footer class="dash-footer">
     <div class="left-items">
-            <!-- social media icons -->
+        
+            <!-- ================= social media icons ==================== -->
+
         <ul class="common-styling"> Follow Us
             <li>
                 <a href="https://www.facebook.com/official.uew">
