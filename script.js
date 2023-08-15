@@ -1,42 +1,25 @@
-// const menu = document.querySelector(".dash-submenu-items");
-// const menuItems = document.querySelectorAll(".dash-submenu");
-// const subMenuTitle = document.querySelectorAll(".dash-submenu-items .dash-submenu-title")
 
-// menuItems.forEach((item,index) => {
-//     item.addEventListener("click", () =>{
-//         menu.classList.add("submenu-active");
-//         item.classList.add("show-dash-submenu-items");
-//         menuItems.forEach((item2,index2) => {
-//             if(index !== index2){
-//                 item2.classList.remove("show-dash-submenu-items");
-//             }
-//         });
-//     });
-// });
+// Get all menu items with submenu
+const menuItems = document.querySelectorAll('.dash-menu-item');
 
-// subMenuTitle.forEach((title) => {
-//     title.addEventListener("click", () => {
-//         menu.classList.remove("dash-submenu-items");
-//     }); 
-// });
+// Add event listeners for hover and focus
+menuItems.forEach(item => {
+    item.addEventListener('mouseenter', showSubmenu);
+    item.addEventListener('mouseleave', hideSubmenu);
+    item.addEventListener('focusin', showSubmenu);
+    item.addEventListener('focusout', hideSubmenu);
+});
 
-// console.log(menuItems, subMenuTitle);
-
-
-// Function to toggle the visibility of the dropdown menu
-function toggleDropdown() {
-  var dropdown = document.getElementById("myDropdown");
-  dropdown.classList.toggle("active"); // Toggle the "active" class
+function showSubmenu(event) {
+    const submenu = event.currentTarget.querySelector('.dash-submenu');
+    if (submenu) {
+        submenu.style.display = 'block';
+    }
 }
 
-// Attach the toggleDropdown function to the click event of the Department menu item
-var departmentMenuItem = document.querySelector(".dash-menu-item:nth-child(1) a");
-departmentMenuItem.addEventListener("click", toggleDropdown);
-
-// Close the dropdown if the user clicks outside of it
-window.addEventListener("click", function(event) {
-  if (!event.target.matches(".dash-menu-item:nth-child(1) a")) {
-      var dropdown = document.getElementById("myDropdown");
-      dropdown.classList.remove("active"); // Close the dropdown
-  }
-});
+function hideSubmenu(event) {
+    const submenu = event.currentTarget.querySelector('.dash-submenu');
+    if (submenu) {
+        submenu.style.display = 'none';
+    }
+}

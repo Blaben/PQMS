@@ -79,7 +79,8 @@
                     <!--Manage Data Drop Down -->
                     <div class="dash-submenu" >
                         <a href="#" class="sub-item">Add User</a> 
-                        <a href="#" class="sub-item">Delet User</a> 
+                        <a href="#" class="sub-item">View User Info</a> 
+                        <a href="#" class="sub-item">Delete User</a> 
                         <a href="#" class="sub-item">Add Question</a> 
                         <a href="#" class="sub-item">Delete Question</a> 
                     </div>
@@ -98,13 +99,63 @@
 
 
      <!-- ========================= Main Menu ======================= -->
-        <div class="dash-main">
+     <div class="dash-main">
 
+            <!-- =================== Add Order Form =================================== -->
+            <div id="orderForm" class="popup-form">
+
+                <!-- Order form elements here -->
+                <form>
+                    <div class="form-wrapper">
+                        
+        
+                    <div class="add-user-form">
+        
+                        <label for="firstname">Full Name</label><br />
+                        <input type="text" name="fullname" id="fullname" required/><br />
+                        
+                        <label for="gender">Select your Gender</label>
+                        <select id="gender" required>
+                          <option value=""></option>
+                          <option name="male" value="male">Male</option>
+                          <option name="female" value="female">Female</option>
+                        </select>
+                        
+                        <label for="dob">Telephone Number</label><br />
+                        <input type="number" name="telnumer" id="telnumber" required/><br />                        
+                        
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" required>
+                        
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" required>
+                        
+                        <label>Select User role</label><br />
+                        <select name="userrole" id="userrole" required >
+                            <option value=""></option>
+                            <option value="">Admin</option>
+                            <option value="">Lecturer</option>
+                            <option value="">Student</option>
+                        </select>
+                        <button type="button" class="reg-btn">Add User</button>
+                    </div>
+                    
+                </div>
+                </form>
+            </div>
+
+            <!--================== Registration form ===========================  -->
+            <div id="registrationForm" class="popup-form">
+
+                <!-- Registration form elements here -->
+
+            </div>
+        
         </div>
 
     </div>
     
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 
 <footer class="dash-footer">
