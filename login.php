@@ -1,3 +1,38 @@
+<?php
+
+$host = "localhost";
+$username = "root";
+$password = ""; // Enter your MySQL password here
+$database = "pqms";
+
+$conn = mysqli_connect($host, $username, $password, $database);
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$message = ""; // Initialize a message variable
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    $query = "SELECT * FROM `users` WHERE `username` = '$username' and `password` = '$password'";
+    $result = mysqli_query($conn, $query);
+
+    if(mysqli_num_rows($result)==1)
+    {
+        session_start();
+        $_SESSION['auth']='true';
+        header('location:dashmin.php');
+    }
+    else {$message = "Incorrect password!";}
+};
+
+
+mysqli_close($conn);
+?>
+
 <!Doctype html>
 <html lang="en-us">
     <head>
@@ -23,7 +58,7 @@
                         <li><a href="https://uew.edu.gh/">UEW</a></li>
                     </ul>
                     <ul class="common-styling">
-                        <li><a href="login.html">Login</a></li>
+                        <li><a href="login.php">Login</a></li>
                     </ul>
                 </div>
 
@@ -42,7 +77,7 @@
                 <p class="para"> As a Student, Use Your index number as Username and your applicant ID as your password <br> As a Lecturer use your Staff ID and password to login</p>
             </div>
 
-            <form action="">
+            <form action="" method="POST">
                 <div class="contact-details">
                 
                     <div class="login-input">
@@ -52,7 +87,7 @@
                         <label for="password">password</label><br />
                         <input type="password" name="password" id="password" required /><br />
     
-                        <button type="button" class="reg-btn">Log In</button>
+                        <button type="submit" class="reg-btn">Log In</button>
                     </div>
                 </div>
             </form>

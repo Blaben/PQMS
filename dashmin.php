@@ -1,3 +1,14 @@
+
+<?php
+    session_start();
+    if(!$_SESSION['auth'])
+    {
+        header('location:login.php');
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,7 +99,7 @@
                 </div>
                 
                 <div class="dash-menu-item">
-                <a href="#">
+                <a href="logout.php">
                     <img src="images/icons/logout_FILL0_wght400_GRAD0_opsz48.svg" alt="" class="dash-img">
                     <h3>Logout</h3>
                 </a>
