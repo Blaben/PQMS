@@ -79,10 +79,10 @@
 
                     <!--Manage Data Drop Down -->
                     <div class="dash-submenu" >
-                        <a href="#" class="sub-item">Add User</a> 
-                        <a href="#" class="sub-item">View User Info</a> 
-                        <a href="#" class="sub-item">Delete User</a> 
-                        <a href="#" class="sub-item">Add Question</a> 
+                        <a href="#" class="sub-item" id="showUserForm">Add User</a> 
+                        <a href="#" class="sub-item" id="showViewForm">View User Info</a> 
+                        <a href="#" class="sub-item" id="showDeleteForm">Delete User</a> 
+                        <a href="#" class="sub-item" id="showQuestionForm">Add Question</a> 
                         <a href="#" class="sub-item">Delete Question</a> 
                     </div>
                 </div>
@@ -102,10 +102,54 @@
      <!-- ========================= Main Menu ======================= -->
      <div class="dash-main">
 
-            <!-- =================== Add Order Form =================================== -->
-            <div id="orderForm" class="popup-form">
 
-                <!-- Order form elements here -->
+
+
+        <!--===================== View A User Pop Up ============================-->
+        
+            <div id="ViewForm" class="popup-form">
+                <form action="">
+
+                    <div class="form-wrapper">
+                        <div class="add-user-form">
+                            <!-- <h3>Delete a User</h3> -->
+
+                            <input type="search" placeholder="Enter Username to search User Data">
+
+                            <div class="form-div">
+                                <button type="submit" class="reg-btn">View User</button>
+                                <a href="#" id="closeViewForm" class="close-button reg-btn">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+        <!--===================== Delelting A User Pop Up ============================-->
+        
+            <div id="DeleteForm" class="popup-form">
+                <form action="">
+
+                    <div class="form-wrapper">
+                        <div class="add-user-form">
+                            <!-- <h3>Delete a User</h3> -->
+
+                            <input type="text" placeholder="Enter Username of User">
+
+                            <div class="form-div">
+                                <button type="submit" class="reg-btn">Delete User</button>
+                                <a href="#" id="closeDeleteForm" class="close-button reg-btn">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- =================== Add User Pop up Form  =================================== -->
+            <div id="UserForm" class="popup-form">
+
+                <!-- User form elements here -->
                 <form>
                     <div class="form-wrapper">
         
@@ -138,17 +182,21 @@
                             <option value="">Lecturer</option>
                             <option value="">Student</option>
                         </select>
-                        <button type="submit" class="reg-btn">Add User</button>
+                        <div class="form-div">
+                            <button type="submit" class="reg-btn">Add User</button>
+                            <a href="#" id="closeUserForm" class="close-button reg-btn">Cancel</a>
+                        </div>
                     </div>
                     
                 </div>
                 </form>
             </div>
 
-            <!--================== Registration form ===========================  -->
-            <div id="registrationForm" class="popup-form">
+            <!--================== Question Pop Up form ===========================  -->
+            <div id="QuestionForm" class="popup-form">
+                
 
-                <!-- Registration form elements here -->
+                <!-- Question form elements here -->
                 <form>
                     <div class="form-wrapper">
         
@@ -221,12 +269,15 @@
                         <input type="file" name="upload_question" id="upload_question" required/>                        
                         
                         <label for="username">Question Upload Date</label>
-                        <input type="text" id="username" required>
+                        <input type="date" id="upload_date" required>
 
                         <label for="user_upload">Question Uploaded By</label>
                         <input type="text" id="user_upload" required>
                         
-                        <button type="submit" class="reg-btn">Add Question</button>
+                        <div class="form-div">
+                            <button type="submit" class="reg-btn">Add Question</button>
+                            <a href="#" id="closeQuestionForm" class="close-button reg-btn">Cancel</a>
+                        </div>
                     </div>
                     
                 </div>
