@@ -23,10 +23,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(mysqli_num_rows($result)==1)
     {
         session_start();
-        $_SESSION['auth']='true';
+        $_SESSION['pqms']='true';
         header('location:dashmin.php');
     }
-    else {$message = "Incorrect password!";}
+    else {
+        $message = "Incorrect Username and Password!";
+    }
 };
 
 
@@ -91,6 +93,12 @@ mysqli_close($conn);
                     </div>
                 </div>
             </form>
+
+            <?php
+            if (!empty($message)) {
+                echo '<script>alert("' . $message . '");</script>';
+            }
+            ?>
 
         </div>
     </body>

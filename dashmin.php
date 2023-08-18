@@ -1,7 +1,7 @@
 
 <?php
     session_start();
-    if(!$_SESSION['auth'])
+    if(!$_SESSION['pqms'])
     {
         header('location:login.php');
     }
@@ -161,7 +161,7 @@
             <div id="UserForm" class="popup-form">
 
                 <!-- User form elements here -->
-                <form>
+                <form action="adduser.php" method="POST">
                     <div class="form-wrapper">
         
                     <div class="add-user-form">
@@ -171,33 +171,39 @@
                         <input type="text" name="fullname" id="fullname" required/><br />
                         
                         <label for="gender">Select your Gender</label>
-                        <select id="gender" required>
-                          <option value=""></option>
-                          <option name="male" value="male">Male</option>
-                          <option name="female" value="female">Female</option>
+                        <select name="gender" id="gender"  required>
+                          <option selected hidden value="">Select User Gender</option>
+                          <option  value="male">Male</option>
+                          <option  value="female">Female</option>
                         </select>
                         
                         <label for="dob">Telephone Number</label><br />
                         <input type="tel" name="telnumer" id="telnumber" required/><br />                        
                         
                         <label for="username">Username:</label>
-                        <input type="text" id="username" required>
+                        <input type="text" name="username" id="username" required>
                         
                         <label for="password">Password:</label>
-                        <input type="password" id="password" required>
+                        <input type="password" name="password" id="password" required>
                         
                         <label>Select User role</label><br />
                         <select name="userrole" id="userrole" required >
-                            <option value=""></option>
-                            <option value="">Admin</option>
-                            <option value="">Lecturer</option>
-                            <option value="">Student</option>
+                            <option  selected hidden value="">Select User Role</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Lecturer">Lecturer</option>
+                            <option value="Student">Student</option>
                         </select>
+
                         <div class="form-div">
                             <button type="submit" class="reg-btn">Add User</button>
                             <a href="#" id="closeUserForm" class="close-button reg-btn">Cancel</a>
                         </div>
                     </div>
+
+                            <!-- Error message section -->
+        <?php if (isset($errorMessage)) { ?>
+            <div class="error-message"><?php echo $errorMessage; ?></div>
+        <?php } ?>
                     
                 </div>
                 </form>
