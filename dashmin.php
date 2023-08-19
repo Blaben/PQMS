@@ -198,15 +198,10 @@
                             <button type="submit" class="reg-btn">Add User</button>
                             <a href="#" id="closeUserForm" class="close-button reg-btn">Cancel</a>
                         </div>
-                    </div>
-
-                            <!-- Error message section -->
-        <?php if (isset($errorMessage)) { ?>
-            <div class="error-message"><?php echo $errorMessage; ?></div>
-        <?php } ?>
-                    
+                    </div>                    
                 </div>
                 </form>
+
             </div>
 
             <!--================== Question Pop Up form ===========================  -->
@@ -228,28 +223,6 @@
                           <option name="icte123" value="icte123">ICTE123 INTRODUCTION TO INSTRUCTIONAL DESIGN</option>
                           <option name="icte124" value="icte124">ICTE124 ETHICAL AND SECURITY ISSUES IN TECHNOLOGY USE</option>
                           <option name="icte125n" value="icte125n">ICTE125N FUNDAMENTALS OF COMPUTER PROGRAMMING</option>
-                          <option name="icte126" value="icte126">ICTE126 INTRODUCTION TO LINEAR ALGEBRA</option>
-                          <option name="edc241dit" value="edc241dit">EDC241DIT PSYCHOLOGY OF HUMAN DEVELOPMENT AND LEARNING</option>
-                          <option name="icte241" value="icte241">ICTE241 LABORATORY MANAGEMENT & PC MAINTENANCE</option>
-                          <option name="icte242" value="icte242">ICTE242 INTRODUCTION TO DATABASE MANAGEMENT SYSTEM</option>
-                          <option name="icte243" value="icte243">ICTE243 EDUCATIONAL APPLICATIONS OF THE INTERNET</option>
-                          <option name="icte244" value="icte244">ICTE244 INTRODUCTION TO VISUAL BASIC PROGRAMMING</option>
-                          <option name="icte245" value="icte245">ICTE245 DATA STRUCTURES AND ALGORITHMS</option>
-                          <option name="edc351dit" value="edc351dit">EDC351DIT GUIDANCE AND COUNSELLING IN EDUCATION</option>
-                          <option name="edc361dit" value="edc361dit">EDC361DIT MEASUREMENT, EVALUATION AND STATISTICS IN EDUCATION</option>
-                          <option name="edc362dit" value="edc362dit">EDC362DIT PRE-INTERNSHIP SEMINAR</option>
-                          <option name="icte361" value="icte361">ICTE361 NUMERICAL METHODS AND ANALYSIS</option>
-                          <option name="icte362" value="icte362">ICTE362 EDUCATIONAL SOFTWARE DEVELOPMENT</option>
-                          <option name="icte363" value="icte363">ICTE363 TECHNOLOGY IN SPECIAL EDUCATION</option>
-                          <option name="icte364" value="icte364">ICTE364 ONLINE COURSE DESIGN & MANAGEMENT</option>
-                          <option name="icte365" value="icte365">ICTE365 TECHNOLOGY PROJECT MANAGEMENT & EVALUATION</option>
-                          <option name="edp481dit" value="edp481dit">EDP481DIT TEACHING PHILOSOPHY & REFLECTIVE PRACTICE</option>
-                          <option name="edp482dit" value="edp482dit">EDP482DIT TEACHING PORTFOLIO</option>
-                          <option name="icte481b" value="icte481b">ICTE481B ADVANCED SOFTWARE DEVELOPMENT</option>
-                          <option name="icte481c" value="icte481c">ICTE481C ADVANCED WEBSITE DESIGN</option>
-                          <option name="icte482a" value="icte482a">ICTE482A ADVANCED COMPUTER NETWORKS AND COMMUNICATIONS</option>
-                          <option name="icte482b" value="icte482b">ICTE482B ADVANCED MANAGEMENT INFORMATION SYSTEMS</option>
-                          <option name="icte482c" value="icte482c">ICTE482C ADVANCED DATABASE MANAGEMENT SYSTEM (DBMS)</option>
                         </select>
 
                         <label for="deptname">Choose Question Department</label>

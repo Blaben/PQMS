@@ -21,28 +21,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // $password = password_hash($_POST["password"], PASSWORD_DEFAULT); // Hash the password
     $userrole = $_POST["userrole"];
     
-    if ($result->num_rows > 0) {
-        $usernameExists = true; // Set the flag
-        $errorMessage = "Username already exists. Please choose a different username.";
+
+    // Prepare and execute SQL query
+    $sql = "INSERT INTO `users` (`fullname`, `phone_number`, `gender`, `username`, `password`, `role`)
+                            VALUES ('$fullname', '$telephone', '$gender', '$username', '$password', '$userrole')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo '<script>';
+        echo 'alert("User added successfully!")';
+        echo '</script>';
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
     }
-
-    else {
-
-        // Prepare and execute SQL query
-        $sql = "INSERT INTO `users` (`fullname`, `phone_number`, `gender`, `username`, `password`, `role`)
-                                VALUES ('$fullname', '$telephone', '$gender', '$username', '$password', '$userrole')";
-    
-        if ($conn->query($sql) === TRUE) {
-            echo '<script>';
-            echo 'alert (""User added successfully!"")';
-            echo '</script>';
-        } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
-        }
-    }
-    
-
 
     $conn->close();
 }
 ?>
+
