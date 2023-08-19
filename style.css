@@ -302,6 +302,36 @@ h2{
     border-radius: 4px;
 }
 
+/*=================== View the user records styling ====================*/
+.user-view-body{
+    margin: 5% 30%;
+    line-height: 4rem;
+}
+
+.ulink{
+    position: relative;
+    padding-bottom: 25px;
+    right: -470px;
+}
+
+.userview{
+    background-color: #ccc;
+    width: 600px;
+    height: auto;
+    padding: 40px;
+}
+
+.userview h2{
+    padding: 0px 0px 20px 0px;
+    border-bottom: 2px solid red;
+}
+
+.userview p{
+    border-bottom: 2px solid #03016c;
+}
+
+
+
 
 /* ========================== Styling the popup forms =====================*/
 .popup-form {

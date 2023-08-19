@@ -49,7 +49,7 @@
                         <a href="#" class="sub-item">French</a> 
                         <a href="#" class="sub-item">Mathematics</a> 
                         <a href="#" class="sub-item">Business Administration</a>
-                        <a href="#" class="sub-item">Science</a></li> 
+                        <a href="#" class="sub-item">Integrated Science</a></li> 
                         <a href="#" class="sub-item">Political Science</a> 
                         <a href="#" class="sub-item">Social Studies</a> 
                         <a href="#" class="sub-item">Music</a> 
@@ -94,7 +94,7 @@
                         <a href="#" class="sub-item" id="showViewForm">View User Info</a> 
                         <a href="#" class="sub-item" id="showDeleteForm">Delete User</a> 
                         <a href="#" class="sub-item" id="showQuestionForm">Add Question</a> 
-                        <a href="#" class="sub-item">Delete Question</a> 
+                        <a href="#" href="view_questions.php" class="sub-item">View all Question</a> 
                     </div>
                 </div>
                 
@@ -119,13 +119,13 @@
         <!--===================== View A User Pop Up ============================-->
         
             <div id="ViewForm" class="popup-form">
-                <form action="">
+                <form action="viewuser.php" method="post">
 
                     <div class="form-wrapper">
                         <div class="add-user-form">
                             <!-- <h3>View a User</h3> -->
 
-                            <input type="search" placeholder="Enter Username to search User Data">
+                            <input type="text" name="usernameToView" placeholder="Enter Username to search User Data">
 
                             <div class="form-div">
                                 <button type="submit" class="reg-btn">View User</button>
@@ -209,7 +209,7 @@
                 
 
                 <!-- Question form elements here -->
-                <form>
+                <form action="add_question.php" method="post" enctype="multipart/form-data" >
                     <div class="form-wrapper">
         
                     <div class="add-user-form">
@@ -258,8 +258,8 @@
                         <label for="dob">Upload Question</label><br />
                         <input type="file" name="upload_question" id="upload_question" required/>                        
                         
-                        <label for="username">Question Upload Date</label>
-                        <input type="date" id="upload_date" required>
+                        <!-- <label for="username">Question Upload Date</label>
+                        <input type="date" id="upload_date" required> -->
 
                         <label for="user_upload">Question Uploaded By</label>
                         <input type="text" id="user_upload" required>

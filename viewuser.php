@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Database connection setup 
+    // Database connection setup (modify with your database credentials)
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -25,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo '<script>';
         echo 'alert("User not found. Please enter a valid username.")';
         echo '</script>';
+        echo '<script>window.location.href ="dashmin.php" </script>';
     }
 
     $conn->close();
@@ -36,19 +37,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
     <title>User Details</title>
 </head>
-<body>
+<body class="user-view-body">
+
+    <div class="ulink">
+        <a href="javascript:history.go(-1)" class="reg-btn">Go to Dashboard</a>
+    </div>
+    
     <?php if(isset($userDetails)) : ?>
-        <h2>User Details</h2>
-        <p>Full Name: <?php echo $userDetails["fullname"]; ?></p>
-        <p>Gender: <?php echo $userDetails["gender"]; ?></p>
-        <p>Phone Number: <?php echo $userDetails["phone_number"]; ?></p>
-        <p>Username: <?php echo $userDetails["username"]; ?></p>
-        <p>Role: <?php echo $userDetails["role"]; ?></p>
-        
+        <div class="userview">
+            <h2>User Records</h2>
+            <p>Full Name: <?php echo $userDetails["fullname"]; ?></p>
+            <p>Phone Number:  <?php echo $userDetails["phone_number"]; ?></p>
+            <p>Username: <?php echo $userDetails["username"]; ?></p>
+            <p>Role:  <?php echo $userDetails["role"]; ?></p>
+        </div>
+      
     <?php endif; ?>
 
-    <a href="javascript:history.go(-1)">Back to View User Form</a>
+
+
 </body>
 </html>
