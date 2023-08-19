@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header('location: dashmin.php');
                 exit();
             } elseif ($userDetails["role"] == "lecturer") {
-                header('location: lecturer_dashboard.php');
+                header('location: dashlecturer.php');
                 exit();
             } elseif ($userDetails["role"] == "student") {
                 header('location: student_dashboard.php');
