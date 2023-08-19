@@ -17,23 +17,44 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    $query = "SELECT * FROM `users` WHERE `username` = '$username' and `password` = '$password'";
+    $query = "SELECT * FROM `users` WHERE `username` = '$username'";
     $result = mysqli_query($conn, $query);
 
-    if(mysqli_num_rows($result)==1)
-    {
-        session_start();
-        $_SESSION['pqms']='true';
-        header('location:dashmin.php');
-    }
-    else {
-        $message = "Incorrect Username and Password!";
-    }
-};
+    if (mysqli_num_rows($result) == 1) {
+        $userDetails = mysqli_fetch_assoc($result);
+        if ($userDetails["password"] == $password) {
+            session_start();
+            $_SESSION['pqms'] = 'true';
+            $_SESSION['user_role'] = $userDetails['role']; // Store the user's role
 
+            // Redirect users based on their roles
+            if ($userDetails["role"] == "admin") {
+                header('location: dashmin.php');
+                exit();
+            } elseif ($userDetails["role"] == "lecturer") {
+                header('location: lecturer_dashboard.php');
+                exit();
+            } elseif ($userDetails["role"] == "student") {
+                header('location: student_dashboard.php');
+                exit();
+            } else {
+                // Handle other roles or provide a default redirect
+                header('location: index.html');
+                exit();
+            }
+        } else {
+            $message = "Incorrect Password!";
+        }
+    } else {
+        $message = "User not found!";
+    }
+}
 
 mysqli_close($conn);
 ?>
+
+
+<!-- ================= My HTML form code ================= -->
 
 <!Doctype html>
 <html lang="en-us">

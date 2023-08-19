@@ -1,12 +1,12 @@
-
 <?php
-    session_start();
-    if(!$_SESSION['pqms'])
-    {
-        header('location:login.php');
-    }
+session_start();
 
+if (!isset($_SESSION["pqms"]) || $_SESSION["user_role"] !== "admin") {
+    header("Location: login.php"); // Redirect to login page
+    exit();
+}
 ?>
+
 
 
 <!DOCTYPE html>
@@ -216,7 +216,7 @@
                         <h2>Add Question</h2>
         
                         <label for="course_code">Choose Question Course Code & title</label>
-                        <select id="course_code" required>
+                        <select name="course_code" id="course_code" required>
                           <option value=""></option>
                           <option name="icte121" value="icte121">ICTE121 EMERGING TECHNOLOGIES</option>
                           <option name="icte122" value="icte122">ICTE122 PEDAGOGICAL INTEGRATION OF ICT IN EDUCATION</option>
@@ -226,7 +226,7 @@
                         </select>
 
                         <label for="deptname">Choose Question Department</label>
-                        <select id="deptname" required>
+                        <select name="deptname" id="deptname" required>
                           <option value=""></option>
                           <option name="ict" value="ict">ICT</option>
                           <option name="mathematics" value="mathematics">Mathematics</option>
@@ -240,7 +240,7 @@
                         </select>
 
                         <label for="question_level">Choose Question Level</label>
-                        <select id="question_level" required>
+                        <select name="Question_level" id="question_level" required>
                           <option value=""></option>
                           <option name="l100" value="l100">Level 100</option>
                           <option name="l200" value="l200">Level 200</option>
