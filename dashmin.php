@@ -123,7 +123,7 @@
 
                     <div class="form-wrapper">
                         <div class="add-user-form">
-                            <!-- <h3>Delete a User</h3> -->
+                            <!-- <h3>View a User</h3> -->
 
                             <input type="search" placeholder="Enter Username to search User Data">
 
@@ -140,13 +140,13 @@
         <!--===================== Delelting A User Pop Up ============================-->
         
             <div id="DeleteForm" class="popup-form">
-                <form action="">
+                <form action="deleteuser.php" method="POST">
 
                     <div class="form-wrapper">
                         <div class="add-user-form">
                             <!-- <h3>Delete a User</h3> -->
 
-                            <input type="text" placeholder="Enter Username of User">
+                            <input type="text" name="usernameToDelete" placeholder="Enter Username of User">
 
                             <div class="form-div">
                                 <button type="submit" class="reg-btn">Delete User</button>
