@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header('location: dashlecturer.php');
                 exit();
             } elseif ($userDetails["role"] == "student") {
-                header('location: student_dashboard.php');
+                header('location: dashstud.php');
                 exit();
             } else {
                 // Handle other roles or provide a default redirect

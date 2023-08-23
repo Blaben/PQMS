@@ -90,8 +90,11 @@ if (!isset($_SESSION["pqms"]) || $_SESSION["user_role"] !== "lecturer") {
 
                     <!--Manage Data Drop Down -->
                     <div class="dash-submenu" >
+                        <a href="#" class="sub-item" id="showUserForm"></a> 
+                        <a href="#" class="sub-item" id="showViewForm"></a> 
+                        <a href="#" class="sub-item" id="showDeleteForm"></a> 
                         <a href="#" class="sub-item" id="showQuestionForm">Add Question</a> 
-                        <a href="#" href="view_questions.php" class="sub-item">View all Question</a> 
+                        <a href="view_questions.php" class="sub-item">View all Question</a> 
                     </div>
                 </div>
                 
@@ -113,93 +116,16 @@ if (!isset($_SESSION["pqms"]) || $_SESSION["user_role"] !== "lecturer") {
 
 
 
-        <!--===================== View A User Pop Up ============================-->
+        <!--===================== View A User Pop Up here in future ============================-->
         
-            <div id="ViewForm" class="popup-form">
-                <form action="viewuser.php" method="post">
-
-                    <div class="form-wrapper">
-                        <div class="add-user-form">
-                            <!-- <h3>View a User</h3> -->
-
-                            <input type="text" name="usernameToView" placeholder="Enter Username to search User Data">
-
-                            <div class="form-div">
-                                <button type="submit" class="reg-btn">View User</button>
-                                <a href="#" id="closeViewForm" class="close-button reg-btn">Cancel</a>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
 
 
-        <!--===================== Delelting A User Pop Up ============================-->
+        <!--===================== Delelting A User Pop Up code incase of future adition ============================-->
         
-            <div id="DeleteForm" class="popup-form">
-                <form action="deleteuser.php" method="POST">
 
-                    <div class="form-wrapper">
-                        <div class="add-user-form">
-                            <!-- <h3>Delete a User</h3> -->
 
-                            <input type="text" name="usernameToDelete" placeholder="Enter Username of User">
-
-                            <div class="form-div">
-                                <button type="submit" class="reg-btn">Delete User</button>
-                                <a href="#" id="closeDeleteForm" class="close-button reg-btn">Cancel</a>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-
-            <!-- =================== Add User Pop up Form  =================================== -->
-            <div id="UserForm" class="popup-form">
-
-                <!-- User form elements here -->
-                <form action="adduser.php" method="POST">
-                    <div class="form-wrapper">
-        
-                    <div class="add-user-form">
-                        <h2>Add User Record</h2>
-        
-                        <label for="firstname">Full Name</label><br />
-                        <input type="text" name="fullname" id="fullname" required/><br />
-                        
-                        <label for="gender">Select your Gender</label>
-                        <select name="gender" id="gender"  required>
-                          <option selected hidden value="">Select User Gender</option>
-                          <option  value="male">Male</option>
-                          <option  value="female">Female</option>
-                        </select>
-                        
-                        <label for="dob">Telephone Number</label><br />
-                        <input type="tel" name="telnumer" id="telnumber" required/><br />                        
-                        
-                        <label for="username">Username:</label>
-                        <input type="text" name="username" id="username" required>
-                        
-                        <label for="password">Password:</label>
-                        <input type="password" name="password" id="password" required>
-                        
-                        <label>Select User role</label><br />
-                        <select name="userrole" id="userrole" required >
-                            <option  selected hidden value="">Select User Role</option>
-                            <option value="Admin">Admin</option>
-                            <option value="Lecturer">Lecturer</option>
-                            <option value="Student">Student</option>
-                        </select>
-
-                        <div class="form-div">
-                            <button type="submit" class="reg-btn">Add User</button>
-                            <a href="#" id="closeUserForm" class="close-button reg-btn">Cancel</a>
-                        </div>
-                    </div>                    
-                </div>
-                </form>
-
-            </div>
+            <!-- =================== Add User Pop up Form here incase in the future  =================================== -->
+            
 
             <!--================== Question Pop Up form ===========================  -->
             <div id="QuestionForm" class="popup-form">
@@ -237,7 +163,7 @@ if (!isset($_SESSION["pqms"]) || $_SESSION["user_role"] !== "lecturer") {
                         </select>
 
                         <label for="question_level">Choose Question Level</label>
-                        <select name="Question_level" id="question_level" required>
+                        <select name="question_level" id="question_level" required>
                           <option value=""></option>
                           <option name="l100" value="l100">Level 100</option>
                           <option name="l200" value="l200">Level 200</option>
@@ -246,7 +172,7 @@ if (!isset($_SESSION["pqms"]) || $_SESSION["user_role"] !== "lecturer") {
                         </select>
 
                         <label for="question_semester">Choose Question Semester</label>
-                        <select id="question_semester" required>
+                        <select name="question_semester" id="question_semester" required>
                           <option value=""></option>
                           <option name="sem1" value="sem1">Semester 1</option>
                           <option name="sem2" value="sem2">Semester 2</option>
@@ -259,11 +185,11 @@ if (!isset($_SESSION["pqms"]) || $_SESSION["user_role"] !== "lecturer") {
                         <input type="date" id="upload_date" required> -->
 
                         <label for="user_upload">Question Uploaded By</label>
-                        <input type="text" id="user_upload" required>
+                        <input type="text" name="user_upload" id="user_upload" required>
                         
                         <div class="form-div">
                             <button type="submit" class="reg-btn">Add Question</button>
-                            <a href="#" id="closeQuestionForm" class="close-button reg-btn">Cancel</a>
+                            <a href="dashlecturer.php" id="closeQuestionForm" class="close-button reg-btn">Cancel</a>
                         </div>
                     </div>
                     

@@ -330,7 +330,33 @@ h2{
     border-bottom: 2px solid #03016c;
 }
 
+/*=======================View Question Styling ========================*/
+table {
+    position: relative;
+    display:none;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: gray;
+    color: #03016c;
+}
 
+
+.question-view-body{
+    margin: 5%;
+    line-height: 4rem;
+}
+
+.questiontable{
+    width: auto;
+    height: auto;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0px;
+    padding:20px;
+    background-color: rgba(255, 228, 196, 0.7);
+}
 
 
 /* ========================== Styling the popup forms =====================*/

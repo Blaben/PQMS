@@ -94,7 +94,7 @@ if (!isset($_SESSION["pqms"]) || $_SESSION["user_role"] !== "admin") {
                         <a href="#" class="sub-item" id="showViewForm">View User Info</a> 
                         <a href="#" class="sub-item" id="showDeleteForm">Delete User</a> 
                         <a href="#" class="sub-item" id="showQuestionForm">Add Question</a> 
-                        <a href="#" href="view_questions.php" class="sub-item">View all Question</a> 
+                        <a href="view_questions.php" class="sub-item">View all Question</a> 
                     </div>
                 </div>
                 
@@ -240,7 +240,7 @@ if (!isset($_SESSION["pqms"]) || $_SESSION["user_role"] !== "admin") {
                         </select>
 
                         <label for="question_level">Choose Question Level</label>
-                        <select name="Question_level" id="question_level" required>
+                        <select name="question_level" id="question_level" required>
                           <option value=""></option>
                           <option name="l100" value="l100">Level 100</option>
                           <option name="l200" value="l200">Level 200</option>
@@ -249,7 +249,7 @@ if (!isset($_SESSION["pqms"]) || $_SESSION["user_role"] !== "admin") {
                         </select>
 
                         <label for="question_semester">Choose Question Semester</label>
-                        <select id="question_semester" required>
+                        <select name="question_semester" id="question_semester" required>
                           <option value=""></option>
                           <option name="sem1" value="sem1">Semester 1</option>
                           <option name="sem2" value="sem2">Semester 2</option>
@@ -262,7 +262,7 @@ if (!isset($_SESSION["pqms"]) || $_SESSION["user_role"] !== "admin") {
                         <input type="date" id="upload_date" required> -->
 
                         <label for="user_upload">Question Uploaded By</label>
-                        <input type="text" id="user_upload" required>
+                        <input type="text" name="user_upload" id="user_upload" required>
                         
                         <div class="form-div">
                             <button type="submit" class="reg-btn">Add Question</button>

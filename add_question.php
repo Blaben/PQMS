@@ -1,4 +1,6 @@
 <?php
+session_start(); // Make sure to start the session
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Database connection setup 
     $servername = "localhost";
@@ -29,7 +31,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo '<script>';
         echo 'alert("Question name already exists. Please choose a different name.")';
         echo '</script>';
-        echo '<script> window.location.href = "dashmin.php"</script>';
+
+        // Check the user's role and redirect accordingly
+        if ($_SESSION['user_role'] === 'admin') {
+            echo '<script> window.location.href = "dashmin.php"</script>';
+        } elseif ($_SESSION['user_role'] === 'lecturer') {
+            echo '<script> window.location.href = "dashlecturer.php"</script>';
+        }
     } else {
         // Handle file upload
         $uploadDir = 'uploads/'; // Folder where files will be stored
@@ -44,12 +52,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo '<script>';
                 echo 'alert("Question added successfully!")';
                 echo '</script>';
-                echo '<script> window.location.href = "dashmin.php"</script>';
+
+                // Check the user's role and redirect accordingly
+                if ($_SESSION['user_role'] === 'admin') {
+                    echo '<script> window.location.href = "dashmin.php"</script>';
+                } elseif ($_SESSION['user_role'] === 'lecturer') {
+                    echo '<script> window.location.href = "dashlecturer.php"</script>';
+                }
             } else {
                 echo "Error: " . $insertQuery . "<br>" . $conn->error;
             }
         } else {
             echo "Error uploading file.";
+
+            // Check the user's role and redirect accordingly
+            if ($_SESSION['user_role'] === 'admin') {
+                echo '<script> window.location.href = "dashmin.php"</script>';
+            } elseif ($_SESSION['user_role'] === 'lecturer') {
+                echo '<script> window.location.href = "dashlecturer.php"</script>';
+            }
         }
     }
 

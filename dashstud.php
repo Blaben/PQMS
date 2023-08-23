@@ -69,7 +69,7 @@ if (!isset($_SESSION["pqms"]) || $_SESSION["user_role"] !== "student") {
 
                 <div class="dash-menu-item">
                 <a href="#">
-                    <img src="images/icons/lab_profile_FILL0_wght400_GRAD0_opsz48.svg" alt="" class="dash-img">
+                    <img src="images/icons/school_black_24dp.svg" alt="" class="dash-img">
                     <h3>Student Portal</h3>
                 </a>
                 </div>
@@ -82,17 +82,17 @@ if (!isset($_SESSION["pqms"]) || $_SESSION["user_role"] !== "student") {
                 </div>
 
                 <div class="dash-menu-item">
-                    <a href="#">
-                        <img class="dash-img" class="dash-arrow" src="images/icons/folder_managed_FILL0_wght400_GRAD0_opsz48.svg" alt="">
-                        <h3>Manage Data</h3>
+                    <a href="view_questions.php">
+                        <img class="dash-img" class="dash-arrow" src="images/icons/source_black_24dp.svg" alt="">
+                        <h3>View Question</h3>
                         <img class="dash-img" class="dash-arrow" src="images/icons/navigate_next_FILL0_wght400_GRAD0_opsz48.svg" alt="">
                     </a>
 
                     <!--Manage Data Drop Down -->
-                    <div class="dash-submenu" >
+                    <!-- <div class="dash-submenu" >
                         <a href="#" class="sub-item" id="showQuestionForm">Add Question</a> 
                         <a href="#" href="view_questions.php" class="sub-item">View all Question</a> 
-                    </div>
+                    </div> -->
                 </div>
                 
                 <div class="dash-menu-item">
