@@ -57,7 +57,7 @@ if (!isset($_SESSION["pqms"]) || $_SESSION["user_role"] !== "admin") {
                     <a href="#" class="sub-item" data-course="Special Education">Special Education</a>
                     <a href="#" class="sub-item" data-course="Liberal Courses">Liberal Courses</a>
                 </div>
-                
+
                 </div>
                 
                 
@@ -112,12 +112,9 @@ if (!isset($_SESSION["pqms"]) || $_SESSION["user_role"] !== "admin") {
 
 
      <!-- ========================= Main Menu ======================= -->
-     <div class="dash-main">
+        <div class="dash-main">
 
-
-
-
-        <!--===================== View A User Pop Up ============================-->
+          <!--===================== View A User Pop Up ============================-->
         
             <div id="ViewForm" class="popup-form">
                 <form action="viewuser.php" method="post">
@@ -138,7 +135,7 @@ if (!isset($_SESSION["pqms"]) || $_SESSION["user_role"] !== "admin") {
             </div>
 
 
-        <!--===================== Delelting A User Pop Up ============================-->
+          <!--===================== Delelting A User Pop Up ============================-->
         
             <div id="DeleteForm" class="popup-form">
                 <form action="deleteuser.php" method="POST">
@@ -158,7 +155,7 @@ if (!isset($_SESSION["pqms"]) || $_SESSION["user_role"] !== "admin") {
                 </form>
             </div>
 
-            <!-- =================== Add User Pop up Form  =================================== -->
+             <!-- =================== Add User Pop up Form  =================================== -->
             <div id="UserForm" class="popup-form">
 
                 <!-- User form elements here -->
@@ -274,12 +271,77 @@ if (!isset($_SESSION["pqms"]) || $_SESSION["user_role"] !== "admin") {
                 </div>
                 </form>
             </div>
+
+            <!-- =================== Selected Department Names ================================ -->
+                <script>
+                    // Add an event listener to each course link
+                    var courseLinks = document.querySelectorAll('.sub-item');
+                    courseLinks.forEach(function(link) {
+                    link.addEventListener('click', function(e) {
+                     e.preventDefault();
+                    var selectedCourse = this.getAttribute('data-course');
+                    window.location.href = 'dashmin.php?course=' + selectedCourse;
+                       });
+                    });
+                </script>
+
+                 <?php
+                     $servername = "localhost";
+                    $username = "root";
+                    $password = "";
+                    $database = "pqms";
+
+                        $conn = new mysqli($servername, $username, $password, $database);
+
+                        if ($conn->connect_error) {
+                        die("Connection failed: " . $conn->connect_error);
+                        }
+
+                        if (isset($_GET['course'])) {
+                           $selectedCourse = $_GET['course'];
+
+                              $query = "SELECT * FROM questions WHERE deptname = '$selectedCourse'";
+                             $result = $conn->query($query);
+
+                         if ($result->num_rows > 0) {
+                             echo '<table>
+                                <tr>
+                                     <th>Course Code</th>
+                                    <th>Department</th>
+                                    <th>Level</th>
+                                    <th>Semester</th>
+                                    <th>Question Name</th>
+                                    <th>Download File</th>
+                                </tr>';
+
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td>" . $row["course_code"] . "</td>";
+                echo "<td>" . $row["deptname"] . "</td>";
+                echo "<td>" . $row["question_level"] . "</td>";
+                echo "<td>" . $row["question_semester"] . "</td>";
+                echo "<td>" . $row["question_name"] . "</td>";
+                echo '<td><a href="' . $row["file_path"] . '" target="_blank">Download</a></td>';
+                echo "</tr>";
+            }
+
+            echo '</table>';
+        } else {
+            echo "No matching records found.";
+        }
+    }
+
+    $conn->close();
+    ?>
         
         </div>
 
     </div>
+
+    
     
     <script src="script.js" defer></script>
+
 </body>
 
 <footer class="dash-footer">
@@ -313,3 +375,4 @@ if (!isset($_SESSION["pqms"]) || $_SESSION["user_role"] !== "admin") {
 
 </footer>
 </html>
+
