@@ -44,19 +44,20 @@ if (!isset($_SESSION["pqms"]) || $_SESSION["user_role"] !== "admin") {
                     </a>
 
                     <!--Department Drop Down -->
-                    <div class="dash-submenu">
-                        <a href="#" class="sub-item">ICT</a> 
-                        <a href="#" class="sub-item">French</a> 
-                        <a href="#" class="sub-item">Mathematics</a> 
-                        <a href="#" class="sub-item">Business Administration</a>
-                        <a href="#" class="sub-item">Integrated Science</a></li> 
-                        <a href="#" class="sub-item">Political Science</a> 
-                        <a href="#" class="sub-item">Social Studies</a> 
-                        <a href="#" class="sub-item">Music</a> 
-                        <a href="#" class="sub-item">HESA</a></li> 
-                        <a href="#" class="sub-item">Special Education</a> 
-                        <a href="#" class="sub-item">Liberal Courses</a>
-                    </div>
+                <div class="dash-submenu">
+                    <a href="#" class="sub-item" data-course="ICT">ICT</a> 
+                    <a href="#" class="sub-item" data-course="French">French</a> 
+                    <a href="#" class="sub-item" data-course="Mathematics">Mathematics</a> 
+                    <a href="#" class="sub-item" data-course="Business Administration">Business Administration</a>
+                    <a href="#" class="sub-item" data-course="Integrated Science">Integrated Science</a>
+                    <a href="#" class="sub-item" data-course="Political Science">Political Science</a>
+                    <a href="#" class="sub-item" data-course="Social Studies">Social Studies</a>
+                    <a href="#" class="sub-item" data-course="Music">Music</a>
+                    <a href="#" class="sub-item" data-course="HESA">HESA</a>
+                    <a href="#" class="sub-item" data-course="Special Education">Special Education</a>
+                    <a href="#" class="sub-item" data-course="Liberal Courses">Liberal Courses</a>
+                </div>
+                
                 </div>
                 
                 
